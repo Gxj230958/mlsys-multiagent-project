@@ -1,0 +1,30 @@
+[run.sh] pwd=/workspace
+[run.sh] python=Python 3.10.12
+[run.sh] ENABLE_LLM=1
+[run.sh] ENABLE_NCU=1
+[run.sh] FULL_SEARCH=1
+[run.sh] RANDOM_SIZES=0
+[run.sh] AGENT_TIME_BUDGET_SECONDS=1500
+[run.sh] LLM_TIMEOUT_S=30
+[run.sh] NCU_PROFILE=1
+[run.sh] NCU_PROFILE_D=4096
+[run.sh] NCU_TIMEOUT_S=180
+[run.sh] CUDA_VISIBLE_DEVICES=
+[agent] evaluating safe_aten_basic
+[agent] safe_aten_basic: compile=True correct=True speedup=0.9977 correct benchmarked
+[agent] evaluating aten_addmm_accumulate
+[agent] aten_addmm_accumulate: compile=True correct=True speedup=0.9975 correct benchmarked
+[agent] evaluating custom_rank16_update_best_only
+[agent] custom_rank16_update_best_only: compile=True correct=True speedup=1.0130 correct benchmarked
+[agent] evaluating cublas_sgemm_sequential
+[agent] cublas_sgemm_sequential: compile=True correct=True speedup=1.0154 correct benchmarked
+[agent] evaluating cublas_sgemm_single_stream_beta_accumulate
+[agent] cublas_sgemm_single_stream_beta_accumulate: compile=True correct=True speedup=1.0274 correct benchmarked
+[agent] evaluating cublas_gemmex_tf32
+[agent] cublas_gemmex_tf32: compile=True correct=False speedup=0.0000 correctness failed at d=[3584, 4096, 4608]
+[agent] selected_candidate=cublas_sgemm_single_stream_beta_accumulate speedup=1.0274
+[run.sh] best=cublas_sgemm_single_stream_beta_accumulate speedup=1.027409 correct=True
+[run.sh] candidates=6 compile_ok=6 correct_count=5
+[run.sh] llm={'available': True, 'enabled': True, 'env_loaded_from': '/workspace/.env', 'key_present': {'API_KEY': True, 'DEEPSEEK_API_KEY': True, 'DeepSeek_API_KEY': False, 'OPENAI_API_KEY': False}, 'model': 'deepseek-v4-pro', 'provider': 'deepseek', 'reason': '', 'try': None, 'used': False}
+[run.sh] ncu={'attempted': True, 'available': True, 'candidate': 'cublas_sgemm_single_stream_beta_accumulate', 'd': 4096, 'enabled': True, 'log': 'generated/ncu_compact/profile_selected.log', 'ok': True, 'path': '/usr/local/bin/ncu', 'returncode': 0, 'version': 'NVIDIA (R) Nsight Compute Command Line Profiler'}
+[run.sh] output_json_bytes=2387

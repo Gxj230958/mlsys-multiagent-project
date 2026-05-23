@@ -1,0 +1,61 @@
+[run.sh] pwd=/workspace
+[run.sh] python3=Python 3.10.12
+[run.sh] torch=2.3.0a0+6ddf5cf85e.nv24.04
+[run.sh] nvcc=/usr/local/cuda/bin/nvcc
+[run.sh] nvidia-smi=/usr/bin/nvidia-smi
+GPU 0: NVIDIA GeForce RTX 3090 (UUID: GPU-889f6e0c-722d-1fc6-b2ef-603082b920c6)
+[run.sh] CUDA_VISIBLE_DEVICES=
+[run.sh] FULL_SEARCH=1
+[run.sh] RANDOM_SIZES=1
+[run.sh] ENABLE_LLM=1
+[run.sh] ENABLE_NCU=1
+[run.sh] MAX_LLM_ROUNDS=2
+[run.sh] MAX_LLM_PROPOSALS_PER_ROUND=3
+[run.sh] FINAL_CONFIRM=1
+[run.sh] FAST_SEARCH=0
+[run.sh] llm.provider=deepseek
+[run.sh] llm.model=deepseek-v4-pro
+[run.sh] llm.base_url_present=True
+[run.sh] llm.api_key_present=True
+[run.sh] llm.available=True
+[agent] emitted startup fallback safe_aten_basic -> optimized_lora.cu
+[agent] evaluating safe_aten_basic
+[agent] new best: safe_aten_basic (first compile/correctness/benchmark eligible candidate)
+[agent] evaluating aten_addmm_accumulate
+[agent] retained best; aten_addmm_accumulate: close confirmation did not improve enough: challenger 0.9979, current best 1.0040
+[agent] evaluating custom_rank16_update_bx16_by16
+[agent] new best: custom_rank16_update_bx16_by16 (primary_speedup improved from 0.9963 to 1.0021 using median_of_per_case_speedups.)
+[agent] evaluating custom_rank16_update_bx32_by8
+[agent] retained best; custom_rank16_update_bx32_by8: close confirmation did not improve enough: challenger 1.0028, current best 1.0021
+[agent] evaluating custom_rank16_update_bx8_by32
+[agent] retained best; custom_rank16_update_bx8_by32: primary_speedup 0.9841 did not beat current best 1.0021.
+[agent] evaluating custom_rank16_update_bx16_by32
+[agent] retained best; custom_rank16_update_bx16_by32: close confirmation did not improve enough: challenger 1.0027, current best 1.0019
+[agent] evaluating custom_rank16_update_bx32_by16
+[agent] retained best; custom_rank16_update_bx32_by16: close confirmation did not improve enough: challenger 1.0028, current best 1.0017
+[agent] evaluating custom_rank16_update_bx32_by32
+[agent] retained best; custom_rank16_update_bx32_by32: primary_speedup 0.9897 did not beat current best 1.0021.
+[agent] evaluating custom_rank16_update_thread_cols2
+[agent] new best: custom_rank16_update_thread_cols2 (primary_speedup improved from 1.0021 to 1.0064 using median_of_per_case_speedups.)
+[agent] evaluating custom_rank16_update_thread_cols4
+[agent] new best: custom_rank16_update_thread_cols4 (primary_speedup improved from 1.0064 to 1.0145 using median_of_per_case_speedups.)
+[agent] selected_candidate=custom_rank16_update_thread_cols2
+[agent] selected_reason=final confirmation selected custom_rank16_update_thread_cols2 with confirmed_primary_speedup 1.0132
+[run.sh] final artifacts:
+-rw-r--r-- 1 root root 4.1K May 10 15:16 optimized_lora.cu
+-rw-r--r-- 1 root root 224K May 10 15:16 output.json
+-rw-r--r-- 1 root root 9.2K May 10 15:16 report2.md
+[run.sh] output.selected_candidate=custom_rank16_update_thread_cols2
+[run.sh] output.selected_reason=final confirmation selected custom_rank16_update_thread_cols2 with confirmed_primary_speedup 1.0132
+[run.sh] output.primary_speedup=1.0131872863232885
+[run.sh] output.primary_speedup_method=median_of_per_case_speedups
+[run.sh] output.shape_policy=full_search+random_search
+[run.sh] output.correctness_sizes=[3584, 3585, 3601, 3712, 3714, 3840, 3968, 4096, 4133, 4224, 4352, 4480, 4607, 4608]
+[run.sh] output.benchmark_sizes=[3584, 3712, 3714, 3840, 3968, 4096, 4133, 4224, 4352, 4480, 4608]
+[run.sh] output.random_sizes=[3714, 3968, 4133, 4352]
+[run.sh] output.final_confirmation.performed=True
+[run.sh] output.final_confirmation.skipped=False
+[run.sh] output.failures=[]
+[run.sh] output.warnings=[]
+[run.sh] output.stop_reasons=[]
+[run.sh] output.rejected_proposals_count=0

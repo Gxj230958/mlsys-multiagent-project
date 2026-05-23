@@ -1,0 +1,572 @@
+{
+  "target_spec_path": "/target/target_spec.json",
+  "total_metrics": 8,
+  "successful_analyses": 8,
+  "results": {
+    "launch__sm_count": {
+      "canonical_name": "observed_active_sm_count",
+      "raw_value": 82,
+      "unit": "count",
+      "analysis": "Requested as `launch__sm_count` and interpreted as runtime-visible active SM count, mapped to `observed_active_sm_count`. The environment probe interpreted `launch__sm_count` as runtime-visible active SM count and sampled `%smid` across multiple rounds to count SM IDs that actually executed work.",
+      "conclusion": "Observed 82 runtime-visible active SM IDs during `%smid` sampling.",
+      "bottleneck": "",
+      "card_type": "topology",
+      "status": "success",
+      "confidence": 0.9,
+      "raw_observations": [
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        },
+        {
+          "observed_active_sms": 82
+        }
+      ],
+      "benchmark_files": [
+        "/workspace/benchmarks/generated/environment_probe.cu",
+        "/workspace/benchmarks/generated/environment_probe",
+        "/workspace/logs/environment_probe_compile.log",
+        "/workspace/logs/environment_probe_run_1.log",
+        "/workspace/logs/environment_probe_run_2.log",
+        "/workspace/logs/environment_probe_run_3.log"
+      ],
+      "ncu_summary": "NCU profiling not available for this probe."
+    },
+    "dram__bytes_read.sum.per_second": {
+      "canonical_name": "dram_bytes_read_per_second",
+      "raw_value": 263128160090.33,
+      "unit": "bytes/s",
+      "analysis": "Requested as `dram__bytes_read.sum.per_second` and mapped to `dram_bytes_read_per_second`. Parsed exact Nsight Compute metric `dram__bytes_read.sum.per_second` from the raw NCU output.",
+      "conclusion": "NCU reported DRAM read throughput of 263128160090.330 bytes/s.",
+      "bottleneck": "",
+      "card_type": "dynamic_traffic",
+      "status": "success",
+      "confidence": 0.9,
+      "raw_observations": [
+        {
+          "source": "ncu_csv",
+          "metric": "dram__bytes_read.sum.per_second",
+          "value": 263128160090.33,
+          "unit": "bytes/s"
+        }
+      ],
+      "benchmark_files": [
+        "/workspace/benchmarks/generated/global_bandwidth.cu",
+        "/workspace/benchmarks/generated/global_bandwidth",
+        "/workspace/logs/global_bandwidth_compile.log",
+        "/workspace/logs/global_bandwidth_run_1.log",
+        "/workspace/logs/global_bandwidth_run_2.log",
+        "/workspace/logs/global_bandwidth_run_3.log",
+        "/workspace/logs/global_bandwidth_ncu.log"
+      ],
+      "ncu_summary": "Memory throughput reaches up to 90.6% of peak (copy_vec4 kernel), indicating memory-bound behavior."
+    },
+    "dram__bytes_write.sum.per_second": {
+      "canonical_name": "dram_bytes_write_per_second",
+      "raw_value": 263098299981.18,
+      "unit": "bytes/s",
+      "analysis": "Requested as `dram__bytes_write.sum.per_second` and mapped to `dram_bytes_write_per_second`. Parsed exact Nsight Compute metric `dram__bytes_write.sum.per_second` from the raw NCU output.",
+      "conclusion": "NCU reported DRAM write throughput of 263098299981.180 bytes/s.",
+      "bottleneck": "",
+      "card_type": "dynamic_traffic",
+      "status": "success",
+      "confidence": 0.9,
+      "raw_observations": [
+        {
+          "source": "ncu_csv",
+          "metric": "dram__bytes_write.sum.per_second",
+          "value": 263098299981.18,
+          "unit": "bytes/s"
+        }
+      ],
+      "benchmark_files": [
+        "/workspace/benchmarks/generated/global_bandwidth.cu",
+        "/workspace/benchmarks/generated/global_bandwidth",
+        "/workspace/logs/global_bandwidth_compile.log",
+        "/workspace/logs/global_bandwidth_run_1.log",
+        "/workspace/logs/global_bandwidth_run_2.log",
+        "/workspace/logs/global_bandwidth_run_3.log",
+        "/workspace/logs/global_bandwidth_ncu.log"
+      ],
+      "ncu_summary": "Memory throughput reaches up to 90.6% of peak (copy_vec4 kernel), indicating memory-bound behavior."
+    },
+    "device__attribute_max_gpu_frequency_khz": {
+      "canonical_name": "device_attribute_max_gpu_frequency_khz",
+      "raw_value": 1695000,
+      "unit": "kHz",
+      "analysis": "Requested as `device__attribute_max_gpu_frequency_khz` and mapped to `device_attribute_max_gpu_frequency_khz`. The environment probe captured `clockRateKHz` from the runtime device-property snapshot.",
+      "conclusion": "Captured `clockRateKHz=1695000` from the environment probe.",
+      "bottleneck": "",
+      "card_type": "hardware_attribute_snapshot",
+      "status": "success",
+      "confidence": 0.88,
+      "raw_observations": [
+        {
+          "clockRateKHz": 1695000
+        }
+      ],
+      "benchmark_files": [
+        "/workspace/benchmarks/generated/environment_probe.cu",
+        "/workspace/benchmarks/generated/environment_probe",
+        "/workspace/logs/environment_probe_compile.log",
+        "/workspace/logs/environment_probe_run_1.log",
+        "/workspace/logs/environment_probe_run_2.log",
+        "/workspace/logs/environment_probe_run_3.log"
+      ],
+      "ncu_summary": "NCU profiling not available for this probe."
+    },
+    "device__attribute_max_mem_frequency_khz": {
+      "canonical_name": "device_attribute_max_mem_frequency_khz",
+      "raw_value": 9751000,
+      "unit": "kHz",
+      "analysis": "Requested as `device__attribute_max_mem_frequency_khz` and mapped to `device_attribute_max_mem_frequency_khz`. The environment probe captured `memoryClockRateKHz` from the runtime device-property snapshot.",
+      "conclusion": "Captured `memoryClockRateKHz=9751000` from the environment probe.",
+      "bottleneck": "",
+      "card_type": "hardware_attribute_snapshot",
+      "status": "success",
+      "confidence": 0.88,
+      "raw_observations": [
+        {
+          "memoryClockRateKHz": 9751000
+        }
+      ],
+      "benchmark_files": [
+        "/workspace/benchmarks/generated/environment_probe.cu",
+        "/workspace/benchmarks/generated/environment_probe",
+        "/workspace/logs/environment_probe_compile.log",
+        "/workspace/logs/environment_probe_run_1.log",
+        "/workspace/logs/environment_probe_run_2.log",
+        "/workspace/logs/environment_probe_run_3.log"
+      ],
+      "ncu_summary": "NCU profiling not available for this probe."
+    },
+    "device__attribute_fb_bus_width": {
+      "canonical_name": "device_attribute_fb_bus_width_bits",
+      "raw_value": 384,
+      "unit": "bits",
+      "analysis": "Requested as `device__attribute_fb_bus_width` and mapped to `device_attribute_fb_bus_width_bits`. The environment probe captured `memoryBusWidthBits` from the runtime device-property snapshot.",
+      "conclusion": "Captured `memoryBusWidthBits=384` from the environment probe.",
+      "bottleneck": "",
+      "card_type": "hardware_attribute_snapshot",
+      "status": "success",
+      "confidence": 0.88,
+      "raw_observations": [
+        {
+          "memoryBusWidthBits": 384
+        }
+      ],
+      "benchmark_files": [
+        "/workspace/benchmarks/generated/environment_probe.cu",
+        "/workspace/benchmarks/generated/environment_probe",
+        "/workspace/logs/environment_probe_compile.log",
+        "/workspace/logs/environment_probe_run_1.log",
+        "/workspace/logs/environment_probe_run_2.log",
+        "/workspace/logs/environment_probe_run_3.log"
+      ],
+      "ncu_summary": "NCU profiling not available for this probe."
+    },
+    "sm__throughput.avg.pct_of_peak_sustained_elapsed": {
+      "canonical_name": "sm_throughput_pct_of_peak_sustained_elapsed",
+      "raw_value": 82.51,
+      "unit": "%",
+      "analysis": "Requested as `sm__throughput.avg.pct_of_peak_sustained_elapsed` and mapped to `sm_throughput_pct_of_peak_sustained_elapsed`. Parsed exact Nsight Compute metric `sm__throughput.avg.pct_of_peak_sustained_elapsed` from an actual NCU CSV data row.",
+      "conclusion": "NCU reported SM throughput at 82.51% of peak sustained throughput.",
+      "bottleneck": "",
+      "card_type": "core_utilization",
+      "status": "success",
+      "confidence": 0.92,
+      "raw_observations": [
+        {
+          "source": "ncu_csv",
+          "metric": "sm__throughput.avg.pct_of_peak_sustained_elapsed",
+          "value": 82.51,
+          "unit": "%"
+        }
+      ],
+      "benchmark_files": [
+        "/workspace/benchmarks/generated/fp32_throughput.cu",
+        "/workspace/benchmarks/generated/fp32_throughput",
+        "/workspace/logs/fp32_throughput_compile.log",
+        "/workspace/logs/fp32_throughput_run_1.log",
+        "/workspace/logs/fp32_throughput_run_2.log",
+        "/workspace/logs/fp32_throughput_run_3.log",
+        "/workspace/logs/fp32_throughput_ncu.log"
+      ],
+      "ncu_summary": "FP32 compute throughput averages around 82.5% of peak, indicating compute-bound behavior."
+    },
+    "gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed": {
+      "canonical_name": "gpu_compute_memory_throughput_pct_of_peak_sustained_elapsed",
+      "raw_value": 57.75,
+      "unit": "%",
+      "analysis": "Requested as `gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed` and mapped to `gpu_compute_memory_throughput_pct_of_peak_sustained_elapsed`. Parsed exact Nsight Compute metric `gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed` from the raw NCU output.",
+      "conclusion": "NCU reported GPU compute-memory throughput at 57.75% of peak sustained throughput.",
+      "bottleneck": "",
+      "card_type": "core_utilization",
+      "status": "success",
+      "confidence": 0.92,
+      "raw_observations": [
+        {
+          "source": "ncu_csv",
+          "metric": "gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed",
+          "value": 57.75,
+          "unit": "%"
+        }
+      ],
+      "benchmark_files": [
+        "/workspace/benchmarks/generated/global_bandwidth.cu",
+        "/workspace/benchmarks/generated/global_bandwidth",
+        "/workspace/logs/global_bandwidth_compile.log",
+        "/workspace/logs/global_bandwidth_run_1.log",
+        "/workspace/logs/global_bandwidth_run_2.log",
+        "/workspace/logs/global_bandwidth_run_3.log",
+        "/workspace/logs/global_bandwidth_ncu.log"
+      ],
+      "ncu_summary": "Memory throughput reaches up to 90.6% of peak (copy_vec4 kernel), indicating memory-bound behavior."
+    }
+  },
+  "agent_logs": [
+    "Selected target specification path: /target/target_spec.json",
+    "Loading target specification from /target/target_spec.json",
+    "ProbePlannerAgent received no usable JSON from LLM; using deterministic fallback.",
+    "BenchmarkGeneratorAgent received no usable JSON from LLM; using deterministic fallback.",
+    "Probe environment_probe: compile=success, run=success, ncu=unavailable",
+    "Probe global_bandwidth: compile=success, run=success, ncu=\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"byte/second\",\"byte/second\",\"byte/second\",\"byte/second\",\"byte/second\",\"byte/second\",\"byte/second\",\"byte/second\",\"%\",\"%\",\"%\",\"%\",\"nsecond\",\"block\",\"block\",\"block\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"block\",\"block\",\"block\",\"block\",\"\",\"\",\"\",\"register/thread\",\"register/thread\",\"byte\",\"byte/block\",\"byte/block\",\"byte/block\",\"byte/block\",\"byte/block\",\"SM\",\"\",\"thread\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"byte\",\"byte\",\"byte\",\"byte\",\"byte\",\"byte\",\"byte\",\"byte\",\"pass\",\"pass\",\"warp\",\"%\",\"warp\"",
+    "Probe fp32_throughput: compile=success, run=success, ncu=\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"nsecond\",\"block\",\"block\",\"block\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"block\",\"block\",\"block\",\"block\",\"\",\"\",\"\",\"register/thread\",\"register/thread\",\"byte\",\"byte/block\",\"byte/block\",\"byte/block\",\"byte/block\",\"byte/block\",\"SM\",\"\",\"thread\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"byte\",\"byte\",\"byte\",\"byte\",\"byte\",\"byte\",\"byte\",\"byte\",\"pass\",\"pass\",\"warp\",\"%\",\"%\",\"%\",\"%\",\"%\",\"warp\"",
+    "nvidia-smi auxiliary evidence: NVIDIA GeForce RTX 3090, 1395, 2100, 9501",
+    "ResultAggregatorAgent received no usable JSON from LLM; using deterministic fallback.",
+    "Processed 8 requested metrics with 8 successful results. Deterministic microbenchmarks remained authoritative even when prompts or API access were unavailable.",
+    "Output path: /workspace/output.json"
+  ],
+  "generated_benchmarks": [
+    {
+      "name": "environment_probe",
+      "source_path": "/workspace/benchmarks/generated/environment_probe.cu",
+      "binary_path": "/workspace/benchmarks/generated/environment_probe",
+      "purpose": "distinct SM IDs reveal runtime-visible active SM count",
+      "compile_status": "success",
+      "run_status": "success",
+      "metrics": [
+        "observed_active_sm_count",
+        "device_attribute_max_gpu_frequency_khz",
+        "device_attribute_max_mem_frequency_khz",
+        "device_attribute_fb_bus_width_bits"
+      ]
+    },
+    {
+      "name": "global_bandwidth",
+      "source_path": "/workspace/benchmarks/generated/global_bandwidth.cu",
+      "binary_path": "/workspace/benchmarks/generated/global_bandwidth",
+      "purpose": "best median throughput identifies stable effective DRAM bandwidth",
+      "compile_status": "success",
+      "run_status": "success",
+      "metrics": [
+        "dram_bytes_read_per_second",
+        "dram_bytes_write_per_second",
+        "gpu_compute_memory_throughput_pct_of_peak_sustained_elapsed"
+      ]
+    },
+    {
+      "name": "fp32_throughput",
+      "source_path": "/workspace/benchmarks/generated/fp32_throughput.cu",
+      "binary_path": "/workspace/benchmarks/generated/fp32_throughput",
+      "purpose": "high FMA count divided by elapsed time yields effective FP32 throughput",
+      "compile_status": "success",
+      "run_status": "success",
+      "metrics": [
+        "sm_throughput_pct_of_peak_sustained_elapsed"
+      ]
+    }
+  ],
+  "probe_plan": [
+    {
+      "probe_name": "environment_probe",
+      "targets": [
+        "observed_active_sm_count",
+        "device_attribute_max_gpu_frequency_khz",
+        "device_attribute_max_mem_frequency_khz",
+        "device_attribute_fb_bus_width_bits"
+      ],
+      "method": "runtime_smid_sampling",
+      "kernel_type": "environment_probe",
+      "sweep_parameters": {
+        "sampling_rounds": 4,
+        "blocks": 4096
+      },
+      "expected_signal": "distinct SM IDs reveal runtime-visible active SM count",
+      "validation_strategy": "repeat trials, robust median, reject impossible values, compare against environment notes",
+      "failure_fallback": "mark affected targets partial or failed with explicit runtime reason"
+    },
+    {
+      "probe_name": "global_bandwidth",
+      "targets": [
+        "dram_bytes_read_per_second",
+        "dram_bytes_write_per_second",
+        "gpu_compute_memory_throughput_pct_of_peak_sustained_elapsed"
+      ],
+      "method": "streaming_copy_bandwidth",
+      "kernel_type": "global_bandwidth",
+      "sweep_parameters": {
+        "block_sizes": [
+          128,
+          256,
+          512
+        ],
+        "modes": [
+          "read",
+          "write",
+          "copy",
+          "vec4_copy"
+        ]
+      },
+      "expected_signal": "best median throughput identifies stable effective DRAM bandwidth",
+      "validation_strategy": "repeat trials, robust median, reject impossible values, compare against environment notes",
+      "failure_fallback": "mark affected targets partial or failed with explicit runtime reason"
+    },
+    {
+      "probe_name": "fp32_throughput",
+      "targets": [
+        "sm_throughput_pct_of_peak_sustained_elapsed"
+      ],
+      "method": "fma_saturation_with_ncu_or_stable_fallback",
+      "kernel_type": "fp32_throughput",
+      "sweep_parameters": {
+        "block_sizes": [
+          128,
+          256
+        ],
+        "iterations": [
+          262144,
+          1048576
+        ]
+      },
+      "expected_signal": "high FMA count divided by elapsed time yields effective FP32 throughput",
+      "validation_strategy": "repeat trials, robust median, reject impossible values, compare against environment notes",
+      "failure_fallback": "mark affected targets partial or failed with explicit runtime reason"
+    }
+  ],
+  "normalized_targets": [
+    {
+      "requested_name": "launch__sm_count",
+      "canonical_name": "observed_active_sm_count",
+      "category": "capacity",
+      "priority": "high",
+      "measurement_strategy": "runtime microbenchmark to count active SMs",
+      "required_precision": "high",
+      "notes": "Maps to observed active SM count via microbenchmark"
+    },
+    {
+      "requested_name": "dram__bytes_read.sum.per_second",
+      "canonical_name": "dram_bytes_read_per_second",
+      "category": "bandwidth",
+      "priority": "high",
+      "measurement_strategy": "microbenchmark for DRAM read bandwidth",
+      "required_precision": "high",
+      "notes": "Direct mapping"
+    },
+    {
+      "requested_name": "dram__bytes_write.sum.per_second",
+      "canonical_name": "dram_bytes_write_per_second",
+      "category": "bandwidth",
+      "priority": "high",
+      "measurement_strategy": "microbenchmark for DRAM write bandwidth",
+      "required_precision": "high",
+      "notes": "Direct mapping"
+    },
+    {
+      "requested_name": "device__attribute_max_gpu_frequency_khz",
+      "canonical_name": "device_attribute_max_gpu_frequency_khz",
+      "category": "frequency",
+      "priority": "high",
+      "measurement_strategy": "API query via CUDA device attribute or runtime measurement",
+      "required_precision": "high",
+      "notes": "Direct mapping"
+    },
+    {
+      "requested_name": "device__attribute_max_mem_frequency_khz",
+      "canonical_name": "device_attribute_max_mem_frequency_khz",
+      "category": "frequency",
+      "priority": "high",
+      "measurement_strategy": "API query via CUDA device attribute or runtime measurement",
+      "required_precision": "high",
+      "notes": "Direct mapping"
+    },
+    {
+      "requested_name": "device__attribute_fb_bus_width",
+      "canonical_name": "device_attribute_fb_bus_width_bits",
+      "category": "capacity",
+      "priority": "medium",
+      "measurement_strategy": "API query via CUDA device attribute",
+      "required_precision": "high",
+      "notes": "Direct mapping"
+    },
+    {
+      "requested_name": "sm__throughput.avg.pct_of_peak_sustained_elapsed",
+      "canonical_name": "sm_throughput_pct_of_peak_sustained_elapsed",
+      "category": "resource_penalty",
+      "priority": "high",
+      "measurement_strategy": "microbenchmark to measure SM throughput relative to peak",
+      "required_precision": "high",
+      "notes": "Direct mapping"
+    },
+    {
+      "requested_name": "gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed",
+      "canonical_name": "gpu_compute_memory_throughput_pct_of_peak_sustained_elapsed",
+      "category": "resource_penalty",
+      "priority": "high",
+      "measurement_strategy": "microbenchmark to measure compute memory throughput relative to peak",
+      "required_precision": "high",
+      "notes": "Direct mapping"
+    }
+  ],
+  "triage": [
+    {
+      "target": "observed_active_sm_count",
+      "status": "accept",
+      "confidence": 0.9,
+      "issues": [],
+      "suspected_causes": [],
+      "recommended_adjustments": [],
+      "final_action": "accept_current"
+    },
+    {
+      "target": "dram_bytes_read_per_second",
+      "status": "accept",
+      "confidence": 0.9,
+      "issues": [],
+      "suspected_causes": [],
+      "recommended_adjustments": [],
+      "final_action": "accept_current"
+    },
+    {
+      "target": "dram_bytes_write_per_second",
+      "status": "accept",
+      "confidence": 0.9,
+      "issues": [],
+      "suspected_causes": [],
+      "recommended_adjustments": [],
+      "final_action": "accept_current"
+    },
+    {
+      "target": "device_attribute_max_gpu_frequency_khz",
+      "status": "accept",
+      "confidence": 0.88,
+      "issues": [],
+      "suspected_causes": [],
+      "recommended_adjustments": [],
+      "final_action": "accept_current"
+    },
+    {
+      "target": "device_attribute_max_mem_frequency_khz",
+      "status": "accept",
+      "confidence": 0.88,
+      "issues": [],
+      "suspected_causes": [],
+      "recommended_adjustments": [],
+      "final_action": "accept_current"
+    },
+    {
+      "target": "device_attribute_fb_bus_width_bits",
+      "status": "accept",
+      "confidence": 0.88,
+      "issues": [],
+      "suspected_causes": [],
+      "recommended_adjustments": [],
+      "final_action": "accept_current"
+    },
+    {
+      "target": "sm_throughput_pct_of_peak_sustained_elapsed",
+      "status": "accept",
+      "confidence": 0.92,
+      "issues": [],
+      "suspected_causes": [],
+      "recommended_adjustments": [],
+      "final_action": "accept_current"
+    },
+    {
+      "target": "gpu_compute_memory_throughput_pct_of_peak_sustained_elapsed",
+      "status": "accept",
+      "confidence": 0.92,
+      "issues": [],
+      "suspected_causes": [],
+      "recommended_adjustments": [],
+      "final_action": "accept_current"
+    }
+  ],
+  "ncu_analysis": [
+    {
+      "probe_name": "environment_probe",
+      "summary": "NCU profiling not available for this probe.",
+      "key_metrics": {},
+      "memory_bound": null,
+      "compute_bound": null,
+      "permission_or_tool_issue": "No NCU output available"
+    },
+    {
+      "probe_name": "global_bandwidth",
+      "summary": "Memory throughput reaches up to 90.6% of peak (copy_vec4 kernel), indicating memory-bound behavior.",
+      "key_metrics": {
+        "dram__bytes_read.sum.per_second_max": 412838373544.99,
+        "dram__bytes_write.sum.per_second_max": 636603425318.26,
+        "gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed_max": 90.6,
+        "gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed_min": 38.9
+      },
+      "memory_bound": true,
+      "compute_bound": false,
+      "permission_or_tool_issue": ""
+    },
+    {
+      "probe_name": "fp32_throughput",
+      "summary": "FP32 compute throughput averages around 82.5% of peak, indicating compute-bound behavior.",
+      "key_metrics": {
+        "sm__throughput.avg.pct_of_peak_sustained_elapsed": 82.51,
+        "sm__throughput.max.pct_of_peak_sustained_elapsed": 92.61,
+        "sm__throughput.min.pct_of_peak_sustained_elapsed": 79.18
+      },
+      "memory_bound": false,
+      "compute_bound": true,
+      "permission_or_tool_issue": ""
+    }
+  ],
+  "environment_notes": {
+    "api_reported_device_properties": {
+      "name": "NVIDIA",
+      "multiProcessorCount": 82,
+      "clockRateKHz": 1695000,
+      "memoryClockRateKHz": 9751000,
+      "memoryBusWidthBits": 384,
+      "l2CacheSizeBytes": 6291456
+    },
+    "observed_active_sms": 82,
+    "frequency_lock_suspected": null,
+    "sm_masking_suspected": false
+  }
+}

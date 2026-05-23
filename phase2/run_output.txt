@@ -1,0 +1,37 @@
+[run.sh] pwd=/home/gxj230958/phase2
+[run.sh] python3=Python 3.13.13
+[run.sh] torch=2.5.1+cu121
+[run.sh] nvcc=/usr/bin/nvcc
+[run.sh] nvidia-smi=/usr/lib/wsl/lib/nvidia-smi
+GPU 0: NVIDIA GeForce RTX 4060 Laptop GPU (UUID: GPU-92bd7cdf-e624-fa8e-e5f5-0c0a76514ab8)
+[run.sh] CUDA_VISIBLE_DEVICES=
+[agent] emitted startup fallback safe_aten_basic -> optimized_lora.cu
+[agent] evaluating safe_aten_basic
+/home/gxj230958/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+[agent] new best: safe_aten_basic (first compiling and correct candidate)
+[agent] evaluating aten_addmm_accumulate
+/home/gxj230958/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+[agent] new best: aten_addmm_accumulate (geomean speedup improved from 0.9787 to 1.0114)
+[agent] evaluating custom_rank16_update_bx16_by16
+/home/gxj230958/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+[agent] retained best; custom_rank16_update_bx16_by16: speedup is close; retained simpler/stabler current best
+[agent] evaluating custom_rank16_update_bx32_by8
+/home/gxj230958/miniconda3/lib/python3.13/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+  warnings.warn(
+[agent] retained best; custom_rank16_update_bx32_by8: geomean speedup 0.9799 did not beat current best 1.0114
+[agent] selected_candidate=aten_addmm_accumulate
+[agent] selected_reason=Selected aten_addmm_accumulate because it passed correctness for [3584, 4096] and had geomean speedup 1.0114.
+[run.sh] final artifacts:
+-rw-r--r-- 1 gxj230958 gxj230958 2.0K May  8 23:35 optimized_lora.cu
+-rw-r--r-- 1 gxj230958 gxj230958 7.8K May  8 23:36 output.json
+-rw-r--r-- 1 gxj230958 gxj230958 2.4K May  8 23:36 report2.md
+[run.sh] output.selected_candidate=aten_addmm_accumulate
+[run.sh] output.selected_reason=Selected aten_addmm_accumulate because it passed correctness for [3584, 4096] and had geomean speedup 1.0114.
+[run.sh] output.failures=[]

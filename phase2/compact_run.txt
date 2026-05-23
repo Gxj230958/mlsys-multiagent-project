@@ -1,0 +1,11 @@
+[run.sh] pwd=/home/gxj230958/projects/phase2_v3
+[run.sh] python=Python 3.13.13
+[run.sh] ENABLE_LLM=0
+[run.sh] ENABLE_NCU=0
+[run.sh] FULL_SEARCH=1
+[run.sh] RANDOM_SIZES=0
+[run.sh] AGENT_TIME_BUDGET_SECONDS=1500
+[run.sh] CUDA_VISIBLE_DEVICES=
+[run.sh] best=safe_aten_basic speedup=0.0 correct=True
+[run.sh] candidates=1 compile_ok=0 correct_count=1
+[run.sh] output_json_bytes=793

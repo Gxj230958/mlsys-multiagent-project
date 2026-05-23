@@ -1,0 +1,110 @@
+----- case1 result -----
+correct: True
+speedup: 1.910540124805116
+----- case1 result -----
+correct: True
+speedup: 2.179143182724376
+----- case1 result -----
+correct: True
+speedup: 0.9822508620909913
+---- agent output ----
+{
+  "best": {
+    "correctness": {
+      "max_abs_err": 1e-06,
+      "rel_l2_err": 1e-06
+    },
+    "median_speedup": 1.035695,
+    "name": "cublas_gemmex_tf32",
+    "speedup_by_d": {
+      "3584": 1.042292,
+      "4096": 0.94407,
+      "4608": 1.035695
+    }
+  },
+  "candidates": [
+    {
+      "compile_ok": true,
+      "correct": true,
+      "name": "safe_aten_basic",
+      "reason": "rejected",
+      "speedup": 0.99544
+    },
+    {
+      "compile_ok": true,
+      "correct": true,
+      "name": "aten_addmm_accumulate",
+      "reason": "rejected",
+      "speedup": 0.994792
+    },
+    {
+      "compile_ok": true,
+      "correct": true,
+      "name": "custom_rank16_update_best_only",
+      "reason": "rejected",
+      "speedup": 1.00464
+    },
+    {
+      "compile_ok": true,
+      "correct": false,
+      "name": "cublas_sgemm_sequential",
+      "reason": "correctness failed at d=[3584, 4096, 4608]",
+      "speedup": 0.0
+    },
+    {
+      "compile_ok": true,
+      "correct": false,
+      "name": "cublas_sgemm_single_stream_beta_accumulate",
+      "reason": "correctness failed at d=[3584, 4096, 4608]",
+      "speedup": 0.0
+    },
+    {
+      "compile_ok": true,
+      "correct": true,
+      "name": "cublas_gemmex_tf32",
+      "reason": "selected",
+      "speedup": 1.035695
+    }
+  ],
+  "llm": {
+    "available": true,
+    "enabled": true,
+    "env_loaded_from": "/workspace/.env",
+    "key_present": {
+      "API_KEY": true,
+      "DEEPSEEK_API_KEY": true,
+      "DeepSeek_API_KEY": false,
+      "OPENAI_API_KEY": true
+    },
+    "model": "deepseek-v4-pro",
+    "provider": "deepseek",
+    "reason": "",
+    "try": null,
+    "used": false
+  },
+  "ncu": {
+    "attempted": true,
+    "available": true,
+    "candidate": "cublas_gemmex_tf32",
+    "d": 4096,
+    "enabled": true,
+    "log": "generated/ncu_compact/profile_selected.log",
+    "ok": true,
+    "path": "/usr/local/bin/ncu",
+    "returncode": 0,
+    "version": "NVIDIA (R) Nsight Compute Command Line Profiler"
+  },
+  "notes": [
+    "Full compact GEMM/cuBLAS run with LLM hinting and NCU probe enabled by default.",
+    "CUDA available: True"
+  ],
+  "summary": {
+    "best_candidate": "cublas_gemmex_tf32",
+    "best_speedup": 1.035695,
+    "correct": true,
+    "elapsed_sec": 425.51,
+    "num_candidates_tested": 6,
+    "num_compile_ok": 6,
+    "num_correct": 4
+  }
+}
